@@ -6,4 +6,4 @@
 - [http requests](httpRequests.md)
 - [uri vs url](URLvsURI.md)
 - [design patterns](designPatterns.md)
-- - active record
+- - [active record](activeRecord.md)
