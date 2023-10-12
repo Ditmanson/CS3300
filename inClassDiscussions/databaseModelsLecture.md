@@ -106,7 +106,7 @@ def
 |  -- | -- | -- |
 | CREATE | Create new instance | POST |
 | Read | Retrieve resource instance | GET |
-| Update | Modify existing resource | PUT |
+| Update | Modify existing resource | kPUT |
 | Delete | Destroy | DELETE|
 | index | Enumerate collection | GET |
 
