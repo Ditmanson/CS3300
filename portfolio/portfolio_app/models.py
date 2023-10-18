@@ -37,7 +37,7 @@ class Portfolio(models.Model):
         return self.title
     def get_absolute_url(self):
         return reverse("portfolio-detail", args=[str(self.id)])
-
+    
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -48,8 +48,10 @@ class Project(models.Model):
     def get_absolute_url(self):
         return reverse("project-detail", args=[str(self.id)])
     
+'''
 class ProjectsInPortfolio(models.Model):
     project = models.ForeignKey('Project', on_delete=models.CASCADE)
   
 class Meta:
     unique_together = ('project', 'portfolio')
+'''

@@ -1,0 +1,43 @@
+{% extends 'portfolio_app/base_template.html' %}
+
+{% block content %}
+  <h1>Portfolio Title: {{ portfolio.title }}</h1>
+  <p>
+    <b>Portfolio Title:</b> {{ portfolio.contact_email }}<br />
+    <b>About:</b>{{ portfolio.about }}
+  </p>
+
+  <h2>Project List</h2>
+  <a class="btn btn-primary" href="{% url 'create_project' portfolio.id %}" role="button">New</a>
+
+  <div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-2 p-3">
+      {% for project in projects %}
+        <div class="col">
+          <img class="card-img-top" src="https://images.unsplash.com/photo-1547190027-9156686aa2f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGhhY2tlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60" alt="Card image" style="width:100%" />
+
+          <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ project.title }}</button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="btn btn-primary px-4" href="{{ project.get_absolute_url }}" role="button">View</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="btn btn-secondary" href="{% url 'update_project' project.pk %}">Update Project</a>
+              </li>
+              <li>
+                <a class="btn btn-danger" href="{% url 'delete_project' project.pk %}" role="button">Delete Project</a>
+              </li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+          </div>
+        </div>
+        {% empty %}
+        <p>There are no projects.</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
