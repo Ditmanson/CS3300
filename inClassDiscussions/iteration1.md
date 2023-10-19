@@ -1,0 +1,4 @@
+- user stories
+- As a vendor, I want to be able tp add my products, so that customers can see them.
+- As a customer, i want to ve able to view the vendors murchandise, so that i can make a purchase
+- 
