@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['cs3300-production.up.railway.app', 'cs3300--travisditmanson.repl.co' ,'127.0.0.1']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
